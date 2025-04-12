@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Password FORM</title>
+    <title>Password Form </title>
 </head>
 <body>
 
 <h2>Enter Your Password</h2>
 
-<form method="get" action="">
+<form method="post" action="">
     <label for="password">Password:</label>
     <input type="password" name="password" id="password" required>
     <br><br>
@@ -15,8 +15,8 @@
 </form>
 
 <?php
-if (isset($_GET['password'])) {
-    $password = $_GET['password'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $password = $_POST['password'];
     echo "<h3>You entered: $password</h3>";
 }
 ?>
